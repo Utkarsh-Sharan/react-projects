@@ -1,5 +1,34 @@
-body{
-    padding: 20px;
-    background-color: #27292c;
-    color: #fff;
+body {
+  padding: 20px;
+  background-color: #27292c;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: #fff;
+}
+
+.header img {
+  width: 100px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  background-color: #171717;
+  padding: 10px;
+  border-radius: 10px;
 }
