@@ -5,13 +5,7 @@ function Header() {
   return (
     <header className="header">
       <img src={reactLogo} alt="react-logo" />
-      <nav>
-        <ul className="nav-list">
-          <li>Home</li>
-          <li>Products</li>
-          <li>About us</li>
-        </ul>
-      </nav>
+      <h1>ReactFacts</h1>
     </header>
   );
 }

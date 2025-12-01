@@ -1,28 +1,27 @@
 body {
-  padding: 20px;
+  margin: 0px;
   background-color: #27292c;
   color: #fff;
+  font-family: Inter;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
-  padding: 10px;
-  border: 2px solid black;
+  padding: 30px 25px;
   border-radius: 20px;
-  box-shadow: #fff;
+  background-color: #171717;
 }
 
 .header img {
   width: 100px;
 }
 
-.nav-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  font-size: 1.1rem;
+.header h1 {
+  color: #61dbfb;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .footer {
