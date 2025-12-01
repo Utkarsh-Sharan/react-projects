@@ -4,8 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <small>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt,
-        eius.
+        © Utkarsh, 2025
       </small>
     </footer>
   );
