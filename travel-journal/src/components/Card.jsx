@@ -1,14 +1,10 @@
 import "../index.css";
 
-function Card() {
+function Card(prop) {
   return (
     <>
       <article className="card">
-        <img
-          src="https://i.pinimg.com/736x/7f/2d/96/7f2d96104ffadeaaef28267d686d0459.jpg"
-          alt="Japan-img"
-          className="country-img"
-        />
+        <img src={prop.img} alt="Japan-img" className="country-img" />
 
         <div className="card-content">
           <div className="heading">
