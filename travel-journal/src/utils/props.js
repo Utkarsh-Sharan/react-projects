@@ -1,4 +1,4 @@
-export default props = {
+export const props = {
   japan: {
     img: "https://i.pinimg.com/736x/7f/2d/96/7f2d96104ffadeaaef28267d686d0459.jpg",
     name: "J A P A N",
@@ -26,4 +26,4 @@ export default props = {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error voluptates deserunt nemo culpa, repellendus rem reiciendis magnam id quas animi?",
   },
-};
+}

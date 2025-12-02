@@ -1,10 +1,10 @@
 import "../index.css";
 
-function Card(prop) {
+function Card({ prop }) {
   return (
     <>
       <article className="card">
-        <img src={prop.img} alt="Japan-img" className="country-img" />
+        <img src={prop?.img} alt="Japan-img" className="country-img" />
 
         <div className="card-content">
           <div className="heading">
@@ -14,7 +14,7 @@ function Card(prop) {
               className="marker-img"
             />
 
-            <span className="country-name">J A P A N</span>
+            <span className="country-name">{prop?.name}</span>
 
             <a
               href="https://maps.app.goo.gl/yhXwRugTeuxbQ5HN9"
@@ -24,15 +24,11 @@ function Card(prop) {
             </a>
           </div>
 
-          <h1>Mount Fuji</h1>
+          <h1>{prop?.place}</h1>
 
-          <h5>12 Jan, 2021 - 24 Jan, 2021</h5>
+          <h5>{prop?.date}</h5>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-            voluptates deserunt nemo culpa, repellendus rem reiciendis magnam id
-            quas animi?
-          </p>
+          <p>{prop?.description}</p>
         </div>
       </article>
     </>
