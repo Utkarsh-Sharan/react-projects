@@ -3,6 +3,13 @@ body {
   font-family: Inter;
 }
 
+.main {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -14,4 +21,48 @@ body {
 
 .header > h3 {
   font-weight: 500;
+}
+
+.card {
+  width: 50%;
+  height: 18%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card > .country-img {
+  border-radius: 10px;
+  width: 25%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content .heading {
+  display: flex;
+  gap: 3%;
+}
+
+.card-content .heading .marker-img {
+  width: 5%;
+}
+
+.card-content .heading .map-text {
+  color: #b1b1b1;
+  text-decoration: underline;
+}
+
+.card-content h1, .card-content h5, .card-content p{
+  margin-bottom: 0px;
+}
+
+.card-content h5 {
+  margin-top: 0px;
 }
