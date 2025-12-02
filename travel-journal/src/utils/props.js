@@ -19,11 +19,11 @@ export const props = {
   },
   england: {
     img: "https://wallpaperaccess.com/full/3767211.jpg",
-    name: "A U S T R A L I A",
+    name: "E N G L A N D",
     mapLink: "https://maps.app.goo.gl/Qom1MaD3vPmMDvTJ9",
     place: "Big Ben",
     date: "15 Jan, 2023 - 31 Jan, 2023",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error voluptates deserunt nemo culpa, repellendus rem reiciendis magnam id quas animi?",
   },
-}
+};

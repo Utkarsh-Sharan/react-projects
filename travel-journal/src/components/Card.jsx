@@ -17,7 +17,7 @@ function Card({ prop }) {
             <span className="country-name">{prop?.name}</span>
 
             <a
-              href="https://maps.app.goo.gl/yhXwRugTeuxbQ5HN9"
+              href={prop?.mapLink}
               className="map-text"
             >
               View on Google Maps
