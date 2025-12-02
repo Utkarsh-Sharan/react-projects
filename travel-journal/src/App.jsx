@@ -8,6 +8,8 @@ function App() {
       <Header />
       <main className="main">
         <Card />
+        <Card />
+        <Card />
       </main>
     </>
   );

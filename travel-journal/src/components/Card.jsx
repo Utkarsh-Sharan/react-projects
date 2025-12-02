@@ -20,7 +20,10 @@ function Card() {
 
             <span className="country-name">J A P A N</span>
 
-            <a href="#" className="map-text">
+            <a
+              href="https://maps.app.goo.gl/yhXwRugTeuxbQ5HN9"
+              className="map-text"
+            >
               View on Google Maps
             </a>
           </div>

@@ -8,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 50px;
 }
 
 .header {
@@ -31,7 +32,7 @@ body {
   align-items: center;
   gap: 30px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .card > .country-img {
@@ -47,11 +48,13 @@ body {
 
 .card-content .heading {
   display: flex;
+  align-items: center;
   gap: 3%;
 }
 
 .card-content .heading .marker-img {
   width: 5%;
+  height: 5%;
 }
 
 .card-content .heading .map-text {
@@ -59,7 +62,9 @@ body {
   text-decoration: underline;
 }
 
-.card-content h1, .card-content h5, .card-content p{
+.card-content h1,
+.card-content h5,
+.card-content p {
   margin-bottom: 0px;
 }
 
