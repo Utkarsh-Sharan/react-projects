@@ -1,17 +1,34 @@
 import "../index.css";
 
 function Main() {
+  const ingredients = ["Ghee", "Sugar", "Wheat"];
+
+  const mapIngredients = ingredients.map((ing) => {
+    return <li key={ing}>{ing}</li>;
+  });
+
+  const handleSubmit = function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const newIngredient = formData.get("ingredient");
+
+    ingredients.push(newIngredient);
+  };
+
   return (
     <>
       <main>
-        <form action="submit" className="ingredient-form">
+        <form className="ingredient-form" onSubmit={handleSubmit}>
           <input
             aria-label="Add ingredient"
             type="text"
             placeholder="e.g. oregano"
+            name="ingredient"
           />
-          <button type="submit">+ Add Ingredient</button>
+          <button>+ Add Ingredient</button>
         </form>
+        <ul>{mapIngredients}</ul>
       </main>
     </>
   );
