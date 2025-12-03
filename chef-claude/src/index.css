@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   font-family: Inter;
@@ -7,16 +11,45 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
   gap: 0.5%;
   background-color: #e5e5e5;
   box-shadow: 0 10px 6px -6px rgb(61, 61, 61);
 }
 
 .header img {
-  width: 5%;
+  width: 100px;
 }
 
 .header h1 {
   font-weight: inherit;
   font-size: 200%;
+}
+
+main {
+  padding-top: 20px;
+}
+
+.ingredient-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.ingredient-form input,
+.ingredient-form button {
+  padding: 10px 5px;
+  box-shadow: 0px 5px 10px 0px #00000080;
+  border: none;
+  border-radius: 5px;
+}
+
+.ingredient-form input {
+  width: 40%;
+}
+
+.ingredient-form button {
+  background-color: #2d2d2d;
+  color: #fff;
 }
