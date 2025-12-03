@@ -39,17 +39,23 @@ main {
 
 .ingredient-form input,
 .ingredient-form button {
-  padding: 10px 5px;
   box-shadow: 0px 5px 10px 0px #00000080;
   border: none;
   border-radius: 5px;
 }
 
 .ingredient-form input {
+  padding: 10px 5px;
   width: 40%;
 }
 
 .ingredient-form button {
+  padding: 10px 30px;
   background-color: #2d2d2d;
   color: #fff;
+}
+
+.ingredient-form button:hover {
+  background-color: #e5e5e5;
+  color: #000000;
 }
