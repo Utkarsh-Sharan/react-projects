@@ -8,10 +8,7 @@ function Main() {
     return <li key={ing}>{ing}</li>;
   });
 
-  const handleSubmit = function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
+  const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
 
     setIngredients((prevIngredient) => [...prevIngredient, newIngredient]);
@@ -20,15 +17,17 @@ function Main() {
   return (
     <>
       <main>
-        <form className="ingredient-form" onSubmit={handleSubmit}>
+        <form className="ingredient-form" action={addIngredient}>
           <input
             aria-label="Add ingredient"
             type="text"
             placeholder="e.g. oregano"
             name="ingredient"
           />
+
           <button>+ Add Ingredient</button>
         </form>
+
         <ul>{mapIngredients}</ul>
       </main>
     </>
