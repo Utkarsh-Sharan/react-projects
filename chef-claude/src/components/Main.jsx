@@ -1,9 +1,10 @@
+import { useState } from "react";
 import "../index.css";
 
 function Main() {
-  const ingredients = ["Ghee", "Sugar", "Wheat"];
+  const [ingredient, setIngredient] = useState([]);
 
-  const mapIngredients = ingredients.map((ing) => {
+  const mapIngredients = ingredient.map((ing) => {
     return <li key={ing}>{ing}</li>;
   });
 
@@ -13,7 +14,7 @@ function Main() {
     const formData = new FormData(e.currentTarget);
     const newIngredient = formData.get("ingredient");
 
-    ingredients.push(newIngredient);
+    setIngredient((prevIngredient) => [...prevIngredient, newIngredient]);
   };
 
   return (
