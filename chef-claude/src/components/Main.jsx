@@ -2,9 +2,9 @@ import { useState } from "react";
 import "../index.css";
 
 function Main() {
-  const [ingredient, setIngredient] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
 
-  const mapIngredients = ingredient.map((ing) => {
+  const mapIngredients = ingredients.map((ing) => {
     return <li key={ing}>{ing}</li>;
   });
 
@@ -14,7 +14,7 @@ function Main() {
     const formData = new FormData(e.currentTarget);
     const newIngredient = formData.get("ingredient");
 
-    setIngredient((prevIngredient) => [...prevIngredient, newIngredient]);
+    setIngredients((prevIngredient) => [...prevIngredient, newIngredient]);
   };
 
   return (
