@@ -65,13 +65,17 @@ main {
   padding: 2%;
 }
 
+.no-ingredients {
+  padding: 2%;
+}
+
 .main-section h2 {
   font-size: xx-large;
   word-spacing: 2px;
 }
 
 .main-section .ingredient-list {
-  margin: 10px;
+  margin: 1%;
 }
 
 .main-section .ingredient-list li {

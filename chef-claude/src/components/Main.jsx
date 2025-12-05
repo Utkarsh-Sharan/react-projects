@@ -3,6 +3,7 @@ import "../index.css";
 
 function Main() {
   const [ingredients, setIngredients] = useState([]);
+  const [recipeShown, setRecipeShown] = useState(false);
 
   const ingredientListItems = ingredients.map((ing) => {
     return <li key={ing}>{ing}</li>;
@@ -11,8 +12,12 @@ function Main() {
   const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
 
-    setIngredients((prevIngredient) => [...prevIngredient, newIngredient]);
+    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   };
+
+  function toggleRecipeShown() {
+    setRecipeShown((prevShown) => !prevShown);
+  }
 
   return (
     <>
@@ -28,21 +33,99 @@ function Main() {
           <button>+ Add Ingredient</button>
         </form>
 
-        <section className="main-section">
-          <h2>Ingredients in hand:</h2>
+        {ingredients.length ? (
+          <section className="main-section">
+            <h2>Ingredients in hand:</h2>
 
-          <ul className="ingredient-list">{ingredientListItems}</ul>
+            <ul className="ingredient-list">{ingredientListItems}</ul>
 
-          <div className="get-recipe-container">
-            <div>
-              <h3>Ready for a recipe?</h3>
+            {ingredients.length >= 4 ? (
+              <div className="get-recipe-container">
+                <div>
+                  <h3>Ready for a recipe?</h3>
 
-              <p>Generate a recipe from your list of ingredients.</p>
-            </div>
+                  <p>Generate a recipe from your list of ingredients.</p>
+                </div>
 
-            <button>Get a recipe</button>
-          </div>
-        </section>
+                <button onClick={toggleRecipeShown}>Get a recipe</button>
+              </div>
+            ) : (
+              <p>
+                Please add {4 - ingredients.length} more ingredients to get a
+                recipe
+              </p>
+            )}
+          </section>
+        ) : (
+          <p className="no-ingredients">Please add some ingredients...</p>
+        )}
+
+        {recipeShown && (
+          <section>
+            <h2>Chef Claude Recommends:</h2>
+            <article className="suggested-recipe-container" aria-live="polite">
+              <p>
+                Based on the ingredients you have available, I would recommend
+                making a simple a delicious <strong>Bolognese Pasta</strong>.
+                Here is the recipe:
+              </p>
+              <h3>Bolognese Pasta</h3>
+              <strong>Ingredients:</strong>
+              <ul>
+                <li>1 lb. ground</li>
+                <li>1 onion, diced</li>
+                <li>3 cloves garlic, minced</li>
+                <li>2 tablespoons tomato paste</li>
+                <li>1 (28 oz) can crushed tomatoes</li>
+                <li>1 cup beef broth</li>
+                <li>1 teaspoon dried oregano</li>
+                <li>1 teaspoon dried basil</li>
+                <li>Salt and pepper to taste</li>
+                <li>
+                  8 oz pasta of your choice (e.g., spaghetti, penne, or
+                  linguine)
+                </li>
+              </ul>
+              <strong>Instructions:</strong>
+              <ol>
+                <li>
+                  Bring a large pot of salted water to a boil for the pasta.
+                </li>
+                <li>
+                  In a large skillet or Dutch oven, cook the ground over
+                  medium-high heat, breaking it up with a wooden spoon, until
+                  browned and cooked through, about 5-7 minutes.
+                </li>
+                <li>
+                  Add the diced onion and minced garlic to the skillet and cook
+                  for 2-3 minutes, until the onion is translucent.
+                </li>
+                <li>Stir in the tomato paste and cook for 1 minute.</li>
+                <li>
+                  Add the crushed tomatoes, broth, oregano, and basil. Season
+                  with salt and pepper to taste.
+                </li>
+                <li>
+                  Reduce the heat to low and let the sauce simmer for 15-20
+                  minutes, stirring occasionally, to allow the flavors to meld.
+                </li>
+                <li>
+                  While the sauce is simmering, cook the pasta according to the
+                  package instructions. Drain the pasta and return it to the
+                  pot.
+                </li>
+                <li>
+                  Add the Bolognese sauce to the cooked pasta and toss to
+                  combine.
+                </li>
+                <li>
+                  Serve hot, garnished with additional fresh basil or grated
+                  Parmesan cheese if desired.
+                </li>
+              </ol>
+            </article>
+          </section>
+        )}
       </main>
     </>
   );
