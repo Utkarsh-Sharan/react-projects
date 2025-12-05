@@ -4,7 +4,7 @@ import "../index.css";
 function Main() {
   const [ingredients, setIngredients] = useState([]);
 
-  const mapIngredients = ingredients.map((ing) => {
+  const ingredientListItems = ingredients.map((ing) => {
     return <li key={ing}>{ing}</li>;
   });
 
@@ -28,7 +28,21 @@ function Main() {
           <button>+ Add Ingredient</button>
         </form>
 
-        <ul>{mapIngredients}</ul>
+        <section className="main-section">
+          <h2>Ingredients in hand:</h2>
+
+          <ul className="ingredient-list">{ingredientListItems}</ul>
+
+          <div className="get-recipe-container">
+            <div>
+              <h3>Ready for a recipe?</h3>
+
+              <p>Generate a recipe from your list of ingredients.</p>
+            </div>
+
+            <button>Get a recipe</button>
+          </div>
+        </section>
       </main>
     </>
   );
