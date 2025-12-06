@@ -1,14 +1,11 @@
 import { useState } from "react";
 import "../index.css";
 import ClaudeRecipe from "./ClaudeRecipe.jsx";
+import IngredientsList from "./IngredientsList.jsx";
 
 function Main() {
   const [ingredients, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown] = useState(false);
-
-  const ingredientListItems = ingredients.map((ing) => {
-    return <li key={ing}>{ing}</li>;
-  });
 
   const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
@@ -35,28 +32,10 @@ function Main() {
         </form>
 
         {ingredients.length ? (
-          <section className="main-section">
-            <h2>Ingredients in hand:</h2>
-
-            <ul className="ingredient-list">{ingredientListItems}</ul>
-
-            {ingredients.length >= 4 ? (
-              <div className="get-recipe-container">
-                <div>
-                  <h3>Ready for a recipe?</h3>
-
-                  <p>Generate a recipe from your list of ingredients.</p>
-                </div>
-
-                <button onClick={toggleRecipeShown}>Get a recipe</button>
-              </div>
-            ) : (
-              <p>
-                Please add {4 - ingredients.length} more ingredients to get a
-                recipe
-              </p>
-            )}
-          </section>
+          <IngredientsList
+            ingredients={ingredients}
+            toggleRecipeShown={toggleRecipeShown}
+          />
         ) : (
           <p className="no-ingredients">Please add some ingredients...</p>
         )}
