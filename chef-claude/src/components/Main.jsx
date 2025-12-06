@@ -10,6 +10,7 @@ function Main() {
   const addIngredient = function (formData) {
     const newIngredient = formData.get("ingredient");
 
+    if (!newIngredient) return;
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   };
 
